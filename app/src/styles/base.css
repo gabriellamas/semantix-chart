@@ -1,0 +1,44 @@
+.flex-area {
+	display:flex;
+}
+.a-items-start{
+	align-items: flex-start;
+} 
+.j-start{
+	justify-content: flex-start;
+}
+.m-right-55{
+	margin-right: 55px;
+}
+
+.page-container{
+	padding:50px 70px;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+h2{
+	font-size: 48px;
+	line-height: 65px;
+	margin-bottom:50px;
+	width: 100%;
+	color: #001B36;
+}
+
+.card{
+	padding:20px;
+	background:#fff;
+	border:2px solid #D8DDE6;
+	border-radius: 4px;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+.card h3{
+	color:#035A27;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	font-style: normal;
+}
