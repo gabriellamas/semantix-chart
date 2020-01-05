@@ -11,15 +11,23 @@ const LineChart = () => {
           })
           .then(function(response){
             response.json().then(function(data){
-              console.log('chart line', data);
-
-              const Hours = Object.entries(data)[0][1].map(element => element.label)
-              const positionsLineOne = Object.entries(data)[0][1].map(element => element.value)
-              const positionsLineTwo = Object.entries(data)[1][1].map(element => element.value)
-
+              constructChart(data)
               
-              // Line
-              const ctxLine = chartRefLine.current.getContext('2d');
+              });
+            })
+          .catch(function(err){ 
+            console.error('Failed retrieving information', err);
+          });
+    
+          const constructChart = (data)=>{
+            
+            const Hours = Object.entries(data)[0][1].map(element => element.label)
+            const positionsLineOne = Object.entries(data)[0][1].map(element => element.value)
+            const positionsLineTwo = Object.entries(data)[1][1].map(element => element.value)
+
+            
+            // Line
+            const ctxLine = chartRefLine.current.getContext('2d');
               const myChartLine = new Chart(ctxLine, {
                 type: 'line',
                 data: {
@@ -38,14 +46,7 @@ const LineChart = () => {
                   ]
                 }
               });
-              
-              });
-            })
-          .catch(function(err){ 
-            console.error('Failed retrieving information', err);
-          });
-    
-
+          }
     })
   
   return (
